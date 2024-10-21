@@ -1,0 +1,6 @@
+C:\Visual studio code\WebsiteEarthPhone_Nhom4\WebsiteEarthPhone_Nhom4\bin\WebsiteEarthPhone_Nhom4.dll.config
+C:\Visual studio code\WebsiteEarthPhone_Nhom4\WebsiteEarthPhone_Nhom4\bin\WebsiteEarthPhone_Nhom4.dll
+C:\Visual studio code\WebsiteEarthPhone_Nhom4\WebsiteEarthPhone_Nhom4\bin\WebsiteEarthPhone_Nhom4.pdb
+C:\Visual studio code\WebsiteEarthPhone_Nhom4\WebsiteEarthPhone_Nhom4\obj\Debug\WebsiteEarthPhone_Nhom4.dll
+C:\Visual studio code\WebsiteEarthPhone_Nhom4\WebsiteEarthPhone_Nhom4\obj\Debug\WebsiteEarthPhone_Nhom4.pdb
+C:\Visual studio code\WebsiteEarthPhone_Nhom4\WebsiteEarthPhone_Nhom4\obj\Debug\WebsiteEarthPhone_Nhom4.csprojResolveAssemblyReference.cache

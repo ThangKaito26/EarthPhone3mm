@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BanDienThoai" Class="EarthPhonedbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=KID;Initial Catalog=BanDienThoai;User ID=laptrinhweb" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BanDienThoaiConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DanhMuc1" Member="DanhMuc1s">
+    <Type Name="DanhMuc1">
+      <Column Name="ID_DANHMUC" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TEN_DANHMUC" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="HIENTHI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VITRI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Icon" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="DanhMuc1_SanPham" Member="SanPhams" ThisKey="ID_DANHMUC" OtherKey="ID_DANHMUC" Type="SanPham" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DatHang" Member="DatHangs">
+    <Type Name="DatHang">
+      <Column Name="ID_DONHANG" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TRANGTHAI" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SoDT" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SOLUONG" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TONG_GIA_TRI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MaHang" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ID_SANPHAM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="SanPham_DatHang" Member="SanPham" ThisKey="ID_SANPHAM" OtherKey="ID_SANPHAM" Type="SanPham" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MauSanPham" Member="MauSanPhams">
+    <Type Name="MauSanPham">
+      <Column Name="ID_MAUSP" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DUONGDANANH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ID_SANPHAM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="SanPham_MauSanPham" Member="SanPham" ThisKey="ID_SANPHAM" OtherKey="ID_SANPHAM" Type="SanPham" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ThuongHieu" Member="ThuongHieus">
+    <Type Name="ThuongHieu">
+      <Column Name="ID_THUONGHIEU" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TEN_THUONGHIEU" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="ThuongHieu_SanPham" Member="SanPhams" ThisKey="ID_THUONGHIEU" OtherKey="ID_THUONGHIEU" Type="SanPham" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SanPham" Member="SanPhams">
+    <Type Name="SanPham">
+      <Column Name="ID_SANPHAM" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TEN_SANPHAM" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="GIA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LISANH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="HOT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_DANHMUC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_THUONGHIEU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CAUHINH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MOTASANPHAM" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ChiTietSanPham" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SanPhamMoi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SanPham_DatHang" Member="DatHangs" ThisKey="ID_SANPHAM" OtherKey="ID_SANPHAM" Type="DatHang" />
+      <Association Name="SanPham_MauSanPham" Member="MauSanPhams" ThisKey="ID_SANPHAM" OtherKey="ID_SANPHAM" Type="MauSanPham" />
+      <Association Name="DanhMuc1_SanPham" Member="DanhMuc1" ThisKey="ID_DANHMUC" OtherKey="ID_DANHMUC" Type="DanhMuc1" IsForeignKey="true" />
+      <Association Name="ThuongHieu_SanPham" Member="ThuongHieu" ThisKey="ID_THUONGHIEU" OtherKey="ID_THUONGHIEU" Type="ThuongHieu" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TinTuc" Member="TinTucs">
+    <Type Name="TinTuc">
+      <Column Name="ID_TINTUC" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TIEUDE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NOIDUNG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DUONGDAN_ANH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

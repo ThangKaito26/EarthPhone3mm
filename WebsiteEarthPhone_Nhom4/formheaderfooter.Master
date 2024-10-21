@@ -1,0 +1,118 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="formheaderfooter.Master.cs" Inherits="WebsiteEarthPhone_Nhom4.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Earth Phone</title>
+    <link rel="icon" href="img/logo/LoGoEarthPhoneTron.png" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="css/home.css" rel="stylesheet" />
+    <link href="css/product.css" rel="stylesheet" />
+    <link href="css/pay.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+            <!-- Header -->
+            <div class="menu">
+                <!-- Menu đầu trang Logo Tìm kiếm liên hệ -->
+                <div class="header">
+                    <div class="logo">
+                        <a href="home.aspx">
+                            <img alt="Digiphone logo" src="img/logo/STORE.png" /></a>
+                    </div>
+                    <div class="search-bar">
+                        <input class="search-input" placeholder="Tìm kiếm sản phẩm..." type="text" />
+                        <button class="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="cart">
+                        <button class="cart-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Giỏ hàng</span>
+                        </button>
+                        <div class="contact">
+                            <p>Gọi mua hàng</p>
+                            <p class="phone-number">0365.668.204</p>
+                        </div>
+                        <div class="order-tracking">
+                            <i class="fas fa-truck"></i>
+                            <span>Tra cứu đơn hàng</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Danh mục -->
+                <ul class="nav-bar">
+                    <% for (int i = 0; i < listDM.Count; i++)
+                       { %>
+                    <li class="nav-item">
+                        <i class="<%=listDM[i].Icon %>"></i>
+                        <a href='<%="SPDanhMuc.aspx?IdDanhMuc=" + listDM[i].ID_DANHMUC.ToString() %>'></a>
+                        <span><a href="#<%=listDM[i].TEN_DANHMUC %>" style="text-decoration: none; color: #7E60BF;"><%=listDM[i].TEN_DANHMUC %> </a></span>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+            <!-- Content -->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+            </asp:ContentPlaceHolder>
+            <!-- footer -->
+            <div class="footer">
+                <div class="footer-column">
+                    <h3>HỆ THỐNG CỬA HÀNG</h3>
+                    <h3><strong>Cần Thơ</strong></h3>
+                    <p>168, Nguyễn Văn Cừ (nối dài), P. An Bình, Q. Ninh Kiều, TP. Cần Thơ </p>
+                    <p>Điện thoại: 0966.120.120 - 0365.668.204</p>
+                    <p>398 Hưng Lợi, Ninh Kiều, Cần Thơ </p>
+                    <p>Điện thoại: 086.1111.398 - 0365.668.204</p>
+                    <p class="highlight">Hotline CSKH: 0365.668.204</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Chính sách</h3>
+                    <p>Chính sách bảo hành</p>
+                    <p>Chính sách đổi trả</p>
+                    <p>Chính sách bán hàng</p>
+                    <p>Chính sách bảo mật</p>
+                    <p>Chính sách sử dụng</p>
+                    <p>Chính sách kiểm hàng</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Liên hệ</h3>
+                    <p>Mua ngay: <span class="highlight">1800.0000</span> (07:30 – 21:30)</p>
+                    <p>Kỹ thuật: <span class="highlight">1800.0001</span> (08:30 – 21:30)</p>
+                    <p>Bảo hành: <span class="highlight">1800.0002</span> (09:00 – 21:00)</p>
+                    <p>Góp ý: <span class="highlight">1800.0004</span> (08:30 – 21:30)</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Gọi tư vấn & khiếu nại</h3>
+                    <p>Gọi mua hàng: 0365.665.204 (8h00 - 21h00)</p>
+                    <p>Hỗ trợ kỹ thuật: 0365.665.204 .</p>
+                    <p>Zalo: 0365.665.204 (9h00 - 19h00)</p>
+                    <h3>Kết nối với chúng tôi</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#"><i class="fab fa-twitter-square"></i></a>
+                        <a href="#"><i class="fab fa-youtube-square"></i></a>
+                        <a href="#"><i class="fab fa-instagram-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>
+                    © 2024. Công ty cổ phần Chuyện ba mùa mưa. GPDKKD: 090306070 do sở KH & ĐT TP.HCM cấp ngày 02/01/2024. GPMXH:
+            238/GP-BTTTT do Bộ Thông Tin và Truyền Thông cấp ngày 04/06/2024.
+                </p>
+                <p>
+                    Địa chỉ: 168, Nguyễn Văn Cừ (nối dài), P. An Bình, Q. Ninh Kiều, TP. Cần Thơ. Điện thoại: 0365 668 204. Email:
+            ltwnhom4@earthphone.com. Chịu trách nhiệm nội dung: Nguyễn Thanh Thắng. Email: EarthPhoneCanTho@gmail.com.
+                </p>
+            </div>
+    </form>
+</body>
+</html>

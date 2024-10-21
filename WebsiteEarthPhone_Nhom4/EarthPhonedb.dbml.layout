@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.75" name="EarthPhonedb">
+  <DataContextMoniker Name="/EarthPhonedbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="2c71fc67-6ebb-4c9c-b400-b48b20f7925c" absoluteBounds="0.75, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/EarthPhonedbDataContext/DanhMuc1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="70a9967e-e1a7-4bbd-be00-74f0437d61ce" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="238ca955-4587-4f13-9395-c99281df1d63" absoluteBounds="6.25, 4.375, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/EarthPhonedbDataContext/DatHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6c32f3ae-845b-416d-bec6-5b4333385251" absoluteBounds="6.265, 4.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f076c906-bea8-4311-86f3-84272745eef1" absoluteBounds="6.25, 2.25, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/EarthPhonedbDataContext/MauSanPham" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f475e5cf-99fd-4b68-90c0-952c6156a13e" absoluteBounds="6.265, 2.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9c2fe556-8519-415d-85d5-6c9ac8d0ebb1" absoluteBounds="0.75, 4, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/EarthPhonedbDataContext/ThuongHieu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6e201def-2741-4a3f-a7dc-99760e2cbdf5" absoluteBounds="0.765, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d96da35c-59d1-4a46-bfa6-24a56e9b1082" absoluteBounds="3.5, 3.125, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/EarthPhonedbDataContext/SanPham" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d649dd27-ce3f-43ad-b254-7dffe10373b9" absoluteBounds="3.515, 3.585, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9b65f93e-d623-4229-9c1c-5805eb6e5913" absoluteBounds="0.75, 7.875, 2, 1.5785953776041675">
+      <DataClassMoniker Name="/EarthPhonedbDataContext/TinTuc" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e1f98171-2aa0-45c5-b208-b68900a08e93" absoluteBounds="0.765, 8.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 5.30850341796875); (6.25 : 5.30850341796875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EarthPhonedbDataContext/SanPham/SanPham_DatHang" />
+      <nodes>
+        <classShapeMoniker Id="d96da35c-59d1-4a46-bfa6-24a56e9b1082" />
+        <classShapeMoniker Id="238ca955-4587-4f13-9395-c99281df1d63" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 3.38064697265625); (6.25 : 3.38064697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EarthPhonedbDataContext/SanPham/SanPham_MauSanPham" />
+      <nodes>
+        <classShapeMoniker Id="d96da35c-59d1-4a46-bfa6-24a56e9b1082" />
+        <classShapeMoniker Id="f076c906-bea8-4311-86f3-84272745eef1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.63544840494792); (4.5 : 1.63544840494792); (4.5 : 3.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EarthPhonedbDataContext/DanhMuc1/DanhMuc1_SanPham" />
+      <nodes>
+        <classShapeMoniker Id="2c71fc67-6ebb-4c9c-b400-b48b20f7925c" />
+        <classShapeMoniker Id="d96da35c-59d1-4a46-bfa6-24a56e9b1082" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.59699625651042); (3.5 : 4.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EarthPhonedbDataContext/ThuongHieu/ThuongHieu_SanPham" />
+      <nodes>
+        <classShapeMoniker Id="9c2fe556-8519-415d-85d5-6c9ac8d0ebb1" />
+        <classShapeMoniker Id="d96da35c-59d1-4a46-bfa6-24a56e9b1082" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
