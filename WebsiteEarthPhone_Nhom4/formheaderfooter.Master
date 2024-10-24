@@ -52,8 +52,8 @@
                        { %>
                     <li class="nav-item">
                         <i class="<%=listDM[i].Icon %>"></i>
-                        <a href='<%="SPDanhMuc.aspx?IdDanhMuc=" + listDM[i].ID_DANHMUC.ToString() %>'></a>
-                        <span><a href="#<%=listDM[i].TEN_DANHMUC %>" style="text-decoration: none; color: #7E60BF;"><%=listDM[i].TEN_DANHMUC %> </a></span>
+                        <a href='<%="catetory.aspx?iddanhmuc=" + listDM[i].ID_DANHMUC.ToString() %>'></a>
+                        <span><a href="<%="catetory.aspx?iddanhmuc=" + listDM[i].TEN_DANHMUC %>" style="text-decoration: none; color: #7E60BF;"><%=listDM[i].TEN_DANHMUC %> </a></span>
                     </li>
                     <% } %>
                 </ul>

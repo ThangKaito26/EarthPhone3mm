@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FredCK.FCKeditorV2">
+      <HintPath>fckeditor\FredCK.FCKeditorV2.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.DynamicData" />
@@ -58,6 +61,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminProduct.aspx" />
+    <Content Include="Adminupdates.aspx" />
+    <Content Include="catetory.aspx" />
     <Content Include="css\pay.css" />
     <Content Include="css\product.css" />
     <Content Include="css\home.css" />
@@ -69,6 +75,27 @@
     <Content Include="pay.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminProduct.aspx.cs">
+      <DependentUpon>AdminProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminProduct.aspx.designer.cs">
+      <DependentUpon>AdminProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Adminupdates.aspx.cs">
+      <DependentUpon>Adminupdates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Adminupdates.aspx.designer.cs">
+      <DependentUpon>Adminupdates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catetory.aspx.cs">
+      <DependentUpon>catetory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="catetory.aspx.designer.cs">
+      <DependentUpon>catetory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EarthPhonedb.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

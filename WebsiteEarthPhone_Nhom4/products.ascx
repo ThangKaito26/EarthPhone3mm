@@ -11,7 +11,7 @@
             <!-- Ảnh và màu sản phẩm -->
             <div class="product-images">
                 <div class="main-image">
-                    <img src='<%=ifDienThoai.ANH%>' alt="Samsung Galaxy" />
+                    <img src='<%= ifDienThoai.ANH %>' alt="Samsung Galaxy" class="thumbnail-active" id="main-product-image" />
                 </div>
             </div>
             <!-- Lựa chọn thanh toán -->
@@ -21,39 +21,35 @@
                 <div class="options">
                     <div class="option-label">Dung lượng</div>
                     <div class="capacity-options">
-                        <button>8GB | 128GB</button>
-                        <button>12GB | 256GB</button>
-                        <button>12GB | 512GB</button>
+                        <button onclick="changeCapacity('8GB | 128GB')">8GB | 128GB</button>
+                        <button onclick="changeCapacity('12GB | 256GB')">12GB | 256GB</button>
+                        <button onclick="changeCapacity('12GB | 512GB')">12GB | 512GB</button>
                     </div>
                 </div>
                 <div class="options">
                     <div class="option-label">Màu sắc</div>
+                    <p style="display: inline">Màu cơ bản| </p>
+                    <% for (int i = 0; i < Colors.Count; i++)
+                       { %>
+                    <%= Colors[i].TenMau %>   |  
+                    <% } %>
                     <div class="product-thumbnails">
-                        <button class="thumbnail-button">
-                            <img src="img/products/samsung-galaxy-s24-ultra-grey-thumbnew-600x600.jpg" alt="Image 1"
-                                data-image-src="img/products/samsung-galaxy-s24-ultra-grey-thumbnew-600x600.jpg" class="thumbnail-active">
+                        <button class="thumbnail-button" onclick="changeImage('<%= ifDienThoai.ANH %>')">
+                            <img src='<%= ifDienThoai.ANH %>' alt="Hình sản phẩm chính"
+                                data-image-src='<%= ifDienThoai.ANH %>'>
                         </button>
-                        <button class="thumbnail-button">
-                            <img src="img/products/samsung-galaxy-s24-ultra-den-1.jpg" alt="Image 2"
-                                data-image-src="img/products/samsung-galaxy-s24-ultra-den-1.jpg">
+                        <% for (int i = 0; i < Colors.Count; i++)
+                           { %>
+                        <button class="thumbnail-button" onclick="changeImage('<%= Colors[i].DUONGDANANH %>')">
+                            <img src='<%= Colors[i].DUONGDANANH %>' alt='<%= Colors[i].TenMau %>'
+                                data-image-src='<%= Colors[i].DUONGDANANH %>'>
                         </button>
-                        <button class="thumbnail-button">
-                            <img src="img/products/samsung-galaxy-s24-ultra-tim-1.jpg" alt="Image 3"
-                                data-image-src="img/products/samsung-galaxy-s24-ultra-tim-1.jpg">
-                        </button>
-                        <button class="thumbnail-button">
-                            <img src="img/products/samsung-galaxy-s24-ultra-vang-1.jpg" alt="Image 4"
-                                data-image-src="img/products/samsung-galaxy-s24-ultra-vang-1.jpg">
-                        </button>
-                        <button class="thumbnail-button">
-                            <img src="img/products/samsung-galaxy-s24-ultra-xam-1.jpg" alt="Image 5"
-                                data-image-src="img/products/samsung-galaxy-s24-ultra-xam-1.jpg">
-                        </button>
+                        <% } %>
                     </div>
                 </div>
                 <div class="purchase-buttons">
                     <button>
-                        <a style="text-decoration:none" href='<%="pay.aspx?IdSanPham=" + ifDienThoai.ID_SANPHAM.ToString() %>'>Mua Ngay
+                        <a style="text-decoration: none" href='<%="pay.aspx?IdSanPham=" + ifDienThoai.ID_SANPHAM.ToString() %>'>Mua Ngay
                         </a>
                     </button>
 
@@ -125,7 +121,6 @@
                         <td>Android 12, One UI 4.1</td>
                     </tr>
                 </table>
-                <button>Xem cấu hình chi tiết</button>
             </div>
         </div>
     </div>
@@ -134,5 +129,11 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-    <script src="js/product.js"></script>
+    <script>
+        function changeImage(imageSrc) {
+            const mainImage = document.querySelector('.thumbnail-active');
+            mainImage.src = imageSrc;
+            mainImage.setAttribute('data-image-src', imageSrc);
+        }
+    </script>
 </div>

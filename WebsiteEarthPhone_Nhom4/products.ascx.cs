@@ -11,12 +11,17 @@ namespace WebsiteEarthPhone_Nhom4
     {
         EarthPhonedbDataContext db = new EarthPhonedbDataContext();
         public static SanPham ifDienThoai = new SanPham();
+        public static List<MauSanPham> Colors = new List<MauSanPham>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (!IsPostBack) // Load data only on the first page load
+            {
                 LoadData();
+                loadimg();
+            }
         }
+
         void LoadData()
         {
             if (Request.QueryString["IdSanPham"] != "")
@@ -31,6 +36,21 @@ namespace WebsiteEarthPhone_Nhom4
                     ifDienThoai = data.First();
                 }
             }
+        }
+
+        void loadimg()
+        {
+            if (ifDienThoai != null && ifDienThoai.ID_SANPHAM > 0)
+            {
+                var data = from q in db.MauSanPhams
+                           where q.ID_SANPHAM == ifDienThoai.ID_SANPHAM
+                           select q;
+
+                if (data != null && data.Count() > 0)
+                {
+                    Colors = data.ToList();
+                }
+            }  
         }
     }
 }
