@@ -14,6 +14,11 @@
     <link href="css/home.css" rel="stylesheet" />
     <link href="css/product.css" rel="stylesheet" />
     <link href="css/pay.css" rel="stylesheet" />
+    <style>
+        .an{
+            visibility: hidden;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -26,11 +31,18 @@
                             <img alt="Digiphone logo" src="img/logo/STORE.png" /></a>
                     </div>
                     <div class="search-bar">
+                        <asp:Panel ID="panel" runat="server" DefaultButton="btnSubmit">
+                            <asp:TextBox ID="txtTimKiem" runat="server" CssClass="search-input" placeholder="Tìm kiếm sản phẩm..."></asp:TextBox>
+                            <asp:Button ID="btnSubmit" CssClass="an" runat="server" OnClick="btnSubmit_Click" />
+                        </asp:Panel>
+                    </div>
+                    <!--  
+                    <div class="search-bar">
                         <input class="search-input" placeholder="Tìm kiếm sản phẩm..." type="text" />
                         <button class="search-button">
                             <i class="fas fa-search"></i>
                         </button>
-                    </div>
+                    </div>-->
                     <div class="cart">
                         <button class="cart-button">
                             <i class="fas fa-shopping-cart"></i>
@@ -52,8 +64,8 @@
                        { %>
                     <li class="nav-item">
                         <i class="<%=listDM[i].Icon %>"></i>
-                        <a href='<%="catetory.aspx?iddanhmuc=" + listDM[i].ID_DANHMUC.ToString() %>'></a>
-                        <span><a href="<%="catetory.aspx?iddanhmuc=" + listDM[i].TEN_DANHMUC %>" style="text-decoration: none; color: #7E60BF;"><%=listDM[i].TEN_DANHMUC %> </a></span>
+                        <a href='<%="Homecatetorys.aspx?IdDanhMuc=" + listDM[i].ID_DANHMUC.ToString() %>'></a>
+                        <span><a href="<%="Homecatetorys.aspx?IdDanhMuc=" + listDM[i].ID_DANHMUC %>" style="text-decoration: none; color: #7E60BF;"><%=listDM[i].TEN_DANHMUC %> </a></span>
                     </li>
                     <% } %>
                 </ul>

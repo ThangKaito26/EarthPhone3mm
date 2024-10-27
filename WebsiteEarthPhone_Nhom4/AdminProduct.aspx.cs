@@ -14,8 +14,38 @@ namespace WebsiteEarthPhone_Nhom4
         {
             if (!IsPostBack)
                 LoadData();
+               // KiemTraDN();
         }
+        /*
+        void KiemTraDN()
+        {
 
+
+            if (Session["username"] != "" && Session["password"] != "") //kiểm tra user và mk có tồn tại ko
+            {
+                //xét username xem khớp vs csdl ko
+                var data = from q in db.CauHinhDNs
+                           where q.TenBien == "UserAdmin" && q.GiaTri == Session["username"]
+                           select q;
+                if (data != null && data.Count() > 0) // nếu nó khớp
+                {
+                    //kiểm tra mk khớp ko
+                    var datax = from x in db.CauHinhDNs
+                                where x.TenBien == "Password" && x.GiaTri == Session["password"]
+                                select x;
+                    if (datax == null && datax.Count() == 0) //sai mk
+                    {
+                        Response.Redirect("AdminLogin.aspx");
+                    }
+                }
+                else //sai username 
+                {
+                    Response.Redirect("AdminLogin.aspx");
+                }
+            }
+
+        }
+        */
         void LoadData()
         {
             var data = from q in db.SanPhams
@@ -41,29 +71,33 @@ namespace WebsiteEarthPhone_Nhom4
                     db.SubmitChanges();
 
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "ThongBao", "alert('Sản Phẩm " + ifdt.TEN_SANPHAM + " đã bị xóa !')", true);
-                    //kiem tra con sp nao hay khong
-                    int remainingProductsCount = db.SanPhams.Count();
-
-                    if (remainingProductsCount == 0)
+                    // Kiểm tra số lượng sản phẩm còn lại 
+                    if (girdSanPham.CurrentPageIndex > 0 && girdSanPham.Items.Count == 1)
                     {
-                        // Áp dụng logic để chuyển hướng về trang 1  
-                        girdSanPham.CurrentPageIndex = 1; // Giả sử bạn có biến CurrentPage để theo dõi trang hiện tại  
-                        LoadData(); // Load lại dữ liệu cho trang 1  
+                        girdSanPham.CurrentPageIndex--; // Giảm chỉ số trang nếu cần }  
+                        LoadData(); // Tải lại dữ liệu }  
                     }
-                    else
+                    if (girdSanPham.Items.Count > 1)// nếu còn
                     {
-                        LoadData(); // Nếu vẫn còn sản phẩm, chỉ cần load lại dữ liệu  
+                        LoadData();
                     }
 
+                    // Xử lý cập nhật sản phẩm 
+                    if (((LinkButton)e.CommandSource).CommandName == "GetUpdate")
+                    {
+                        string idcapnhat = girdSanPham.DataKeys[e.Item.ItemIndex].ToString();
+                        Response.Redirect("Adminupdates.aspx?IdSanPham=" + idcapnhat);
+                    }
                 }
-            }
-            //cho trang cap nhat
+            }    
+            // Xử lý cập nhật sản phẩm 
             if (((LinkButton)e.CommandSource).CommandName == "GetUpdate")
             {
                 string idcapnhat = girdSanPham.DataKeys[e.Item.ItemIndex].ToString();
                 Response.Redirect("Adminupdates.aspx?IdSanPham=" + idcapnhat);
             }
         }
+
 
         protected void girdSanPham_PageIndexChanged(object source, DataGridPageChangedEventArgs e)
         {

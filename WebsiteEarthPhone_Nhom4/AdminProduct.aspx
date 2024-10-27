@@ -167,7 +167,8 @@
                                     OnClientClick="return confirm('Bạn Muốn Xóa Sản Phẩm Này Đúng Không ?')"></asp:LinkButton>
                                 <asp:LinkButton ID="linkUpdata" runat="server" Text="Cập Nhật" Width="100"
                                     CommandName="GetUpdate"
-                                    OnClientClick="return confirm('Bạn Muốn Cập Nhật Sản Phẩm Khác Đúng Không ?')"></asp:LinkButton>
+                                    >
+                                </asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateColumn>
                     </Columns>

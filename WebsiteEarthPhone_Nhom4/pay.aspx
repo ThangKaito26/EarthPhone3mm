@@ -37,7 +37,7 @@
                     <div class="flex items-center mb-4">
                         <img alt="Image of SAMSUNG Galaxy S22 Ultra 5G (8GB | 128GB) Mỹ Mới Fullbox"
                             class="w-12 h-12 rounded mr-4" height="50"
-                            src='<%=ifDienThoai.ANH%>'
+                            src='<%="./img/products/" + ifDienThoai.ANH%>'
                             width="60" />
                         <div>
                             <p class="text-sm">

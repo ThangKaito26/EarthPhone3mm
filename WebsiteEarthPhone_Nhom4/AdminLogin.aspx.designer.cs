@@ -10,7 +10,7 @@
 namespace WebsiteEarthPhone_Nhom4 {
     
     
-    public partial class WebForm3 {
+    public partial class AdminLogin {
         
         /// <summary>
         /// form1 control.
@@ -22,66 +22,39 @@ namespace WebsiteEarthPhone_Nhom4 {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblTenDT control.
+        /// lblThongBaoDN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTenDT;
+        protected global::System.Web.UI.WebControls.Label lblThongBaoDN;
         
         /// <summary>
-        /// txeHoTen control.
+        /// txtUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txeHoTen;
+        protected global::System.Web.UI.WebControls.TextBox txtUser;
         
         /// <summary>
-        /// txtEmail control.
+        /// txtMK control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtMK;
         
         /// <summary>
-        /// txtSDT control.
+        /// btnDangNhap control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSDT;
-        
-        /// <summary>
-        /// txtDiaChi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDiaChi;
-        
-        /// <summary>
-        /// txtSoLuong control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSoLuong;
-        
-        /// <summary>
-        /// btnThanhToan control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnThanhToan;
+        protected global::System.Web.UI.WebControls.Button btnDangNhap;
     }
 }

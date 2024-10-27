@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WebsiteEarthPhone_Nhom4
 {
-    public partial class catetory : System.Web.UI.Page
+    public partial class HomeTK : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

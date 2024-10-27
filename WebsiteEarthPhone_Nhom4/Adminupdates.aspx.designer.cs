@@ -76,13 +76,13 @@ namespace WebsiteEarthPhone_Nhom4 {
         protected global::System.Web.UI.WebControls.FileUpload fileHinhAnh;
         
         /// <summary>
-        /// txtCauHinh control.
+        /// FCKCauHinh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCauHinh;
+        protected global::FredCK.FCKeditorV2.FCKeditor FCKCauHinh;
         
         /// <summary>
         /// txtMoTa control.

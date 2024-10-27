@@ -2,62 +2,75 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="EarthPhonedb">
   <DataContextMoniker Name="/EarthPhonedbDataContext" />
   <nestedChildShapes>
-    <classShape Id="6bef68da-6ee8-4ee6-9ea4-e7562182de8a" absoluteBounds="0.75, 5.625, 2, 1.7708968098958327">
+    <classShape Id="2a52b6b5-90d3-4877-aff5-64d5f92832b8" absoluteBounds="0.75, 0.75, 2, 1.7708968098958331">
       <DataClassMoniker Name="/EarthPhonedbDataContext/DanhMuc1" />
       <nestedChildShapes>
-        <elementListCompartment Id="1f3be2ab-8c82-4adf-a032-19504d467dca" absoluteBounds="0.765, 6.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5f2c542b-e0d7-48fb-9b8b-038ed35270d4" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="59b114f3-2a1e-4a88-ab66-ed8c891c06dd" absoluteBounds="6.25, 1.125, 2, 2.7324039713541666">
+    <classShape Id="c8ecc3b0-041f-4d5e-bfd3-df3ea675f8fa" absoluteBounds="6.25, 4.375, 2, 2.7324039713541666">
       <DataClassMoniker Name="/EarthPhonedbDataContext/DatHang" />
       <nestedChildShapes>
-        <elementListCompartment Id="3e13b8d2-8a14-4983-926e-2d2d84654040" absoluteBounds="6.265, 1.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="856c9c8b-f296-47bd-9e6c-fca23b1286d7" absoluteBounds="6.265, 4.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4a1db8bc-f7be-453e-9359-ef03a82f1b26" absoluteBounds="3.75, 5.75, 2, 1.5785953776041666">
+    <classShape Id="7430f01a-311f-4d3d-9a73-d50b6c1a6daf" absoluteBounds="6.25, 2.125, 2, 1.5785953776041666">
       <DataClassMoniker Name="/EarthPhonedbDataContext/MauSanPham" />
       <nestedChildShapes>
-        <elementListCompartment Id="7d2fc08f-c053-47f1-ab5f-e80c2a04f697" absoluteBounds="3.765, 6.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="8b4f68b4-5268-4d2a-9f16-3ae005bd76c9" absoluteBounds="6.265, 2.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="42c5e0f7-820c-41f5-8e6b-36b33ce4d7fd" absoluteBounds="3.5, 1, 2, 3.1170068359375009">
+    <classShape Id="f99d78fe-fccd-4318-a313-adecea132422" absoluteBounds="3.5, 3.125, 2, 3.1170068359374996">
       <DataClassMoniker Name="/EarthPhonedbDataContext/SanPham" />
       <nestedChildShapes>
-        <elementListCompartment Id="c791c092-8d95-4b3f-a39c-e7352b094e1a" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="21178f4b-ffdf-451b-bd11-14aac836c722" absoluteBounds="3.515, 3.585, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e2660efc-d0fd-4f38-9210-7868e750fae9" absoluteBounds="0.75, 2, 2, 1.1939925130208335">
+    <classShape Id="09ff9b1d-a4e3-48c1-8b14-7cc4f2428fe5" absoluteBounds="0.75, 4, 2, 1.1939925130208335">
       <DataClassMoniker Name="/EarthPhonedbDataContext/ThuongHieu" />
       <nestedChildShapes>
-        <elementListCompartment Id="9cb926ea-5dd3-47c3-8522-1728e5019ade" absoluteBounds="0.765, 2.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="87b16d68-54f8-4389-a972-3d1eb7cb1d27" absoluteBounds="0.765, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1c2cd0ea-1306-47be-b493-7acbe09681ce" absoluteBounds="6.75, 4.75, 2, 1.5785953776041666">
+    <classShape Id="b316b248-abb6-49a4-915b-ec7841d53676" absoluteBounds="0.625, 6.625, 2, 1.5785953776041666">
       <DataClassMoniker Name="/EarthPhonedbDataContext/TinTuc" />
       <nestedChildShapes>
-        <elementListCompartment Id="61d7caee-52d0-4a5e-87b5-d232d2c82f84" absoluteBounds="6.765, 5.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ff41e309-f00c-488b-add2-280154ec3312" absoluteBounds="0.64, 7.0850000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.5 : 2.49120198567708); (6.25 : 2.49120198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 5.30850341796875); (6.25 : 5.30850341796875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/EarthPhonedbDataContext/SanPham/SanPham_DatHang" />
       <nodes>
-        <classShapeMoniker Id="42c5e0f7-820c-41f5-8e6b-36b33ce4d7fd" />
-        <classShapeMoniker Id="59b114f3-2a1e-4a88-ab66-ed8c891c06dd" />
+        <classShapeMoniker Id="f99d78fe-fccd-4318-a313-adecea132422" />
+        <classShapeMoniker Id="c8ecc3b0-041f-4d5e-bfd3-df3ea675f8fa" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 5.65625); (3.59375 : 5.65625); (3.59375 : 4.1170068359375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 3.41429768880208); (6.25 : 3.41429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EarthPhonedbDataContext/SanPham/SanPham_MauSanPham" />
+      <nodes>
+        <classShapeMoniker Id="f99d78fe-fccd-4318-a313-adecea132422" />
+        <classShapeMoniker Id="7430f01a-311f-4d3d-9a73-d50b6c1a6daf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.63544840494792); (4.5 : 1.63544840494792); (4.5 : 3.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/EarthPhonedbDataContext/DanhMuc1/DanhMuc1_SanPham" />
       <nodes>
-        <classShapeMoniker Id="6bef68da-6ee8-4ee6-9ea4-e7562182de8a" />
-        <classShapeMoniker Id="42c5e0f7-820c-41f5-8e6b-36b33ce4d7fd" />
+        <classShapeMoniker Id="2a52b6b5-90d3-4877-aff5-64d5f92832b8" />
+        <classShapeMoniker Id="f99d78fe-fccd-4318-a313-adecea132422" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.59699625651042); (3.5 : 2.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.59699625651042); (3.5 : 4.59699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/EarthPhonedbDataContext/ThuongHieu/ThuongHieu_SanPham" />
       <nodes>
-        <classShapeMoniker Id="e2660efc-d0fd-4f38-9210-7868e750fae9" />
-        <classShapeMoniker Id="42c5e0f7-820c-41f5-8e6b-36b33ce4d7fd" />
+        <classShapeMoniker Id="09ff9b1d-a4e3-48c1-8b14-7cc4f2428fe5" />
+        <classShapeMoniker Id="f99d78fe-fccd-4318-a313-adecea132422" />
       </nodes>
     </associationConnector>
+    <classShape Id="90a8f410-36bf-4b41-b39d-eb7c7830efea" absoluteBounds="6.25, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/EarthPhonedbDataContext/CauHinhDN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="122db01a-81ae-4f9f-a160-4aceaeddad0a" absoluteBounds="6.2650000000000006, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

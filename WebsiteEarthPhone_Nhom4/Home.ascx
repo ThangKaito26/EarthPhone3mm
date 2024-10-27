@@ -57,13 +57,15 @@
         <div class="product-grid">
             <% for (int i = 0; i < listSPHot.Count; i++)
                { %>
-            <div class="product-item">
-                <a href='<%="products.aspx?IdSanPham="+ listSPHot[i].ID_SANPHAM.ToString() %>'>
-                    <img alt="<%= listSPHot[i].TEN_SANPHAM %>" src="<%= listSPHot[i].ANH %>" width="200" height="300" />
-                </a>
-                <h3><%= listSPHot[i].TEN_SANPHAM %></h3>
-                <p class="price"><%= listSPHot[i].GIA %></p>
-            </div>
+            <a href='<%="products.aspx?IdSanPham="+ listSPHot[i].ID_SANPHAM.ToString() %>' style="text-decoration: none">
+                <div class="product-item">
+
+                    <img alt="<%= listSPHot[i].TEN_SANPHAM %>" src="<%="./img/products/sphot/" + listSPHot[i].ANH %>" width="200" height="300" />
+
+                    <h3><%= listSPHot[i].TEN_SANPHAM %></h3>
+                    <p class="price"><%= listSPHot[i].GIA %></p>
+                </div>
+            </a>
             <% } %>
         </div>
     </section>
@@ -73,31 +75,31 @@
         <div class="product-grid">
             <% for (int i = 0; i < listSPM.Count; i++)
                { %>
-            <div class="product-item">
-                <a href='<%="products.aspx?IdSanPham="+ listSPM[i].ID_SANPHAM.ToString() %>'>
-                    <img alt="<%= listSPM[i].TEN_SANPHAM %>" src="<%= listSPM[i].ANH %>"
+            <a href='<%="products.aspx?IdSanPham="+ listSPM[i].ID_SANPHAM.ToString() %>' style="text-decoration: none">
+                <div class="product-item">
+                    <img alt="<%= listSPM[i].TEN_SANPHAM %>" src="<%="./img/products/spmoi/" + listSPM[i].ANH %>"
                         width="200" height="300" />
-                </a>
-                <h3><%= listSPM[i].TEN_SANPHAM %></h3>
-                <p class="price"><%= listSPM[i].GIA %></p>
-            </div>
+                    <h3><%= listSPM[i].TEN_SANPHAM %></h3>
+                    <p class="price"><%= listSPM[i].GIA %></p>
+                </div>
+            </a>
             <% } %>
         </div>
     </section>
-    <!-- Sản phẩm bán chạy -->
-    <section id="IPHONE" class="promotion-section bg-purple-200">
+  
+    <section class="promotion-section bg-purple-200">
         <h2>iPhone</h2>
         <div class="product-grid">
             <% for (int i = 1; i < listIPHONE.Count; i++)
                { %>
-            <div class="product-item">
-                <a href='<%="products.aspx?IdSanPham="+ listIPHONE[i].ID_SANPHAM.ToString() %>'>
-                    <img alt="<%= listIPHONE[i].TEN_SANPHAM %>" src="<%= listIPHONE[i].ANH %>"
+            <a href='<%="products.aspx?IdSanPham="+ listIPHONE[i].ID_SANPHAM.ToString() %>' style="text-decoration: none">
+                <div class="product-item">
+                    <img alt="<%= listIPHONE[i].TEN_SANPHAM %>" src="<%="./img/products/iphone/" + listIPHONE[i].ANH %>"
                         width="200" height="300" />
-                </a>
-                <h3><%= listIPHONE[i].TEN_SANPHAM %></h3>
-                <p class="price"><%= listIPHONE[i].GIA %></p>
-            </div>
+                    <h3><%= listIPHONE[i].TEN_SANPHAM %></h3>
+                    <p class="price"><%= listIPHONE[i].GIA %></p>
+                </div>
+            </a>
             <% } %>
         </div>
     </section>
@@ -107,14 +109,14 @@
         <div class="product-grid">
             <% for (int i = 1; i < listOPPO.Count; i++)
                { %>
-            <div class="product-item">
-                <a href='<%="products.aspx?IdSanPham="+ listOPPO[i].ID_SANPHAM.ToString() %>'>
-                    <img alt="<%= listOPPO[i].TEN_SANPHAM %>" src="<%= listOPPO[i].ANH %>"
+            <a href='<%="products.aspx?IdSanPham="+ listOPPO[i].ID_SANPHAM.ToString() %>' style="text-decoration: none">
+                <div class="product-item">
+                    <img alt="<%= listOPPO[i].TEN_SANPHAM %>" src="<%="./img/products/oppo/" + listOPPO[i].ANH %>"
                         width="200" height="300" />
-                </a>
-                <h3><%= listOPPO[i].TEN_SANPHAM %></h3>
-                <p class="price"><%= listOPPO[i].GIA %></p>
-            </div>
+                    <h3><%= listOPPO[i].TEN_SANPHAM %></h3>
+                    <p class="price"><%= listOPPO[i].GIA %></p>
+                </div>
+            </a>
             <% } %>
         </div>
     </section>
@@ -124,14 +126,14 @@
         <div class="product-grid">
             <% for (int i = 1; i < listSS.Count; i++)
                { %>
-            <div class="product-item">
-                <a href='<%="products.aspx?IdSanPham="+ listSS[i].ID_SANPHAM.ToString() %>'>
-                    <img alt="<%= listSS[i].TEN_SANPHAM %>" src="<%= listSS[i].ANH %>"
+            <a href='<%="products.aspx?IdSanPham="+ listSS[i].ID_SANPHAM.ToString() %>' style="text-decoration: none">
+                <div class="product-item">
+                    <img alt="<%= listSS[i].TEN_SANPHAM %>" src="<%="./img/products/samsung/" + listSS[i].ANH %>"
                         width="200" height="300" />
-                </a>
-                <h3><%= listSS[i].TEN_SANPHAM %></h3>
-                <p class="price"><%= listSS[i].GIA %></p>
-            </div>
+                    <h3><%= listSS[i].TEN_SANPHAM %></h3>
+                    <p class="price"><%= listSS[i].GIA %></p>
+                </div>
+            </a>
             <% } %>
         </div>
     </section>
@@ -141,14 +143,14 @@
         <div class="product-grid">
             <% for (int i = 1; i < listRM.Count; i++)
                { %>
-            <div class="product-item">
-                <a href='<%="products.aspx?IdSanPham="+ listRM[i].ID_SANPHAM.ToString() %>'>
-                    <img alt="<%= listRM[i].TEN_SANPHAM %>" src="<%= listRM[i].ANH %>"
+            <a href='<%="products.aspx?IdSanPham="+ listRM[i].ID_SANPHAM.ToString() %>' style="text-decoration: none">
+                <div class="product-item">
+                    <img alt="<%= listRM[i].TEN_SANPHAM %>" src="<%="./img/products/realmi/" + listRM[i].ANH %>"
                         width="200" height="300" />
-                </a>
-                <h3><%= listRM[i].TEN_SANPHAM %></h3>
-                <p class="price"><%= listRM[i].GIA %></p>
-            </div>
+                    <h3><%= listRM[i].TEN_SANPHAM %></h3>
+                    <p class="price"><%= listRM[i].GIA %></p>
+                </div>
+            </a>
             <% } %>
         </div>
     </section>
@@ -158,31 +160,31 @@
         <div class="product-grid">
             <% for (int i = 1; i < listVV.Count; i++)
                { %>
-            <div class="product-item">
-                <a href='<%="products.aspx?IdSanPham="+ listVV[i].ID_SANPHAM.ToString() %>'>
-                    <img alt="<%= listVV[i].TEN_SANPHAM %>" src="<%= listVV[i].ANH %>"
+            <a href='<%="products.aspx?IdSanPham="+ listVV[i].ID_SANPHAM.ToString() %>' style="text-decoration: none">
+                <div class="product-item">
+                    <img alt="<%= listVV[i].TEN_SANPHAM %>" src="<%="./img/products/vivo/" + listVV[i].ANH %>"
                         width="200" height="300" />
-                </a>
-                <h3><%= listVV[i].TEN_SANPHAM %></h3>
-                <p class="price"><%= listVV[i].GIA %></p>
-            </div>
+                    <h3><%= listVV[i].TEN_SANPHAM %></h3>
+                    <p class="price"><%= listVV[i].GIA %></p>
+                </div>
+            </a>
             <% } %>
         </div>
     </section>
 
-    <section id="XIAOMI" class="promotion-section bg-purple-200">
+    <section iclass="promotion-section bg-purple-200">
         <h2>Xiaomi</h2>
         <div class="product-grid">
             <% for (int i = 1; i < listXM.Count; i++)
                { %>
-            <div class="product-item">
-                <a href='<%="products.aspx?IdSanPham="+ listXM[i].ID_SANPHAM.ToString() %>'>
-                    <img alt="<%= listXM[i].TEN_SANPHAM %>" src="<%= listXM[i].ANH %>"
+            <a href='<%="products.aspx?IdSanPham="+ listXM[i].ID_SANPHAM.ToString() %>' style="text-decoration: none">
+                <div class="product-item">
+                    <img alt="<%= listXM[i].TEN_SANPHAM %>" src="<%="./img/products/xiaomi/" + listXM[i].ANH %>"
                         width="200" height="300" />
-                </a>
-                <h3><%= listXM[i].TEN_SANPHAM %></h3>
-                <p class="price"><%= listXM[i].GIA %></p>
-            </div>
+                    <h3><%= listXM[i].TEN_SANPHAM %></h3>
+                    <p class="price"><%= listXM[i].GIA %></p>
+                </div>
+            </a>
             <% } %>
         </div>
     </section>
@@ -192,14 +194,14 @@
         <div class="product-grid">
             <% for (int i = 1; i < listSPKH.Count; i++)
                { %>
-            <div class="product-item">
-                <a href='<%="products.aspx?IdSanPham="+ listSPKH[i].ID_SANPHAM.ToString() %>'>
-                    <img alt="<%= listSPKH[i].TEN_SANPHAM %>" src="<%= listSPKH[i].ANH %>"
+            <a href='<%="products.aspx?IdSanPham="+ listSPKH[i].ID_SANPHAM.ToString() %>' style="text-decoration: none">
+                <div class="product-item">
+                    <img alt="<%= listSPKH[i].TEN_SANPHAM %>" src="<%="./img/products/spkhac" + listSPKH[i].ANH %>"
                         width="200" height="300" />
-                </a>
-                <h3><%= listSPKH[i].TEN_SANPHAM %></h3>
-                <p class="price"><%= listSPKH[i].GIA %></p>
-            </div>
+                    <h3><%= listSPKH[i].TEN_SANPHAM %></h3>
+                    <p class="price"><%= listSPKH[i].GIA %></p>
+                </div>
+            </a>
             <% } %>
         </div>
     </section>

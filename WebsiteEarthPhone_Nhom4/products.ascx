@@ -11,7 +11,7 @@
             <!-- Ảnh và màu sản phẩm -->
             <div class="product-images">
                 <div class="main-image">
-                    <img src='<%= ifDienThoai.ANH %>' alt="Samsung Galaxy" class="thumbnail-active" id="main-product-image" />
+                    <img src='<%="./img/products/" + ifDienThoai.ANH %>' class="thumbnail-active" id="main-product-image" />
                 </div>
             </div>
             <!-- Lựa chọn thanh toán -->
@@ -66,61 +66,13 @@
             <!-- Đánh giá sản phẩm -->
             <div class="product-review">
                 <h2>Đánh giá chi tiết <%=ifDienThoai.TEN_SANPHAM %></h2>
-                <p>
-                    Thiết kế Galaxy S22 Ultra được thừa hưởng từ dòng 'Galaxy Note'
-                    Có thể nói Galaxy S22 Series là một trong những dòng sản phẩm bị lộ nhiều nhất của Samsung vì gần
-                    như
-                    chúng ta đã thấy được toàn bộ thông số phần cứng như thiết kế của máy trước khi máy được ra mắt tại
-                    sự
-                    kiện Unpacked 2022. Thế nhưng sức nóng của bộ 3 sản phẩm mới của thương hiệu kim chi vẫn chưa hết
-                    hot,
-                    hãy như sự chú ý của những người yêu thích điện thoại Samsung trong thời gian qua đều đổ dồn về
-                    Galaxy
-                    S22 Ultra khi đây là một sản phẩm có thiết kế hoàn toàn khác so với Galaxy S20 Ultra và Galaxy S21
-                    Ultra
-                    trước đây.
-               
-                </p>
-                <img src="https://storage.googleapis.com/a1aa/image/KoOYQBFdSdbLOp9B6e4Y1OX4qNZIxWVWQKrEeT7mscWDVxjTA.jpg"
-                    alt="Three Samsung Galaxy S22 phones in different colors" />
-                <p>
-                    Mặt khác, trong cái lạ cũng có cái quen khi Galaxy S22 Ultra giờ đây có lẽ chính là sự
-                    hợp thể của dòng Galaxy S và Galaxy Note mà mọi người vẫn luôn mong đợi từ bấy lâu nay. Nhắc đến
-                    dòng
-                    Galaxy Note của Samsung thì đặc điểm giúp mọi người nhận diện chính là thiết kế vuông vức cùng bút
-                    S Pen được đặt trong thân máy, và cả hai đặc điểm này đều hiện diện trên Galaxy S22 Ultra mới nhất
-                    của chúng t
+                <%=HttpUtility.HtmlDecode(ifDienThoai.ChiTietSanPham) %> <!--DECODE LAY TU CSDL LEN -->
            
             </div>
             <!-- Thông số -->
             <div class="product-specs">
                 <h2>Thông số kỹ thuật <%=ifDienThoai.TEN_SANPHAM %></h2>
-                <table>
-                    <tr>
-                        <td>Thân Máy</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Kích Thước</td>
-                        <td>163.3 x 77.9 x 8.9 mm</td>
-                    </tr>
-                    <tr>
-                        <td>Khối Lượng</td>
-                        <td>228 g / 229 g (mmWave)</td>
-                    </tr>
-                    <tr>
-                        <td>SIM</td>
-                        <td>Dual SIM (Nano-SIM)</td>
-                    </tr>
-                    <tr>
-                        <td>Màn hình</td>
-                        <td>Dynamic AMOLED 2X</td>
-                    </tr>
-                    <tr>
-                        <td>Hệ điều hành</td>
-                        <td>Android 12, One UI 4.1</td>
-                    </tr>
-                </table>
+                <%=HttpUtility.HtmlDecode(ifDienThoai.CAUHINH) %>
             </div>
         </div>
     </div>

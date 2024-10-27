@@ -27,10 +27,11 @@
   </Table>
   <Table Name="dbo.MauSanPham" Member="MauSanPhams">
     <Type Name="MauSanPham">
-      <Column Name="ID_MAUSP" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_MAUSP" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="DUONGDANANH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="ID_SANPHAM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="TenMau" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="SanPham_MauSanPham" Member="SanPham" ThisKey="ID_SANPHAM" OtherKey="ID_SANPHAM" Type="SanPham" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.SanPham" Member="SanPhams">
@@ -48,6 +49,7 @@
       <Column Name="ChiTietSanPham" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="SanPhamMoi" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="SanPham_DatHang" Member="DatHangs" ThisKey="ID_SANPHAM" OtherKey="ID_SANPHAM" Type="DatHang" />
+      <Association Name="SanPham_MauSanPham" Member="MauSanPhams" ThisKey="ID_SANPHAM" OtherKey="ID_SANPHAM" Type="MauSanPham" />
       <Association Name="DanhMuc1_SanPham" Member="DanhMuc1" ThisKey="ID_DANHMUC" OtherKey="ID_DANHMUC" Type="DanhMuc1" IsForeignKey="true" />
       <Association Name="ThuongHieu_SanPham" Member="ThuongHieu" ThisKey="ID_THUONGHIEU" OtherKey="ID_THUONGHIEU" Type="ThuongHieu" IsForeignKey="true" />
     </Type>
@@ -65,6 +67,13 @@
       <Column Name="TIEUDE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="NOIDUNG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="DUONGDAN_ANH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CauHinhDN" Member="CauHinhDNs">
+    <Type Name="CauHinhDN">
+      <Column Name="ID_CAUHINH" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenBien" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="GiaTri" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

@@ -114,7 +114,7 @@
 <body>  
     <form id="form1" runat="server">  
         <div class="header">  
-            <img alt="Earth Phone Store Logo" src="img/logo/STORE.png" width="200" />
+           <a href="AdminProduct.aspx"> <img alt="Earth Phone Store Logo" src="img/logo/STORE.png" width="200" /> </a>
         </div>  
         <div class="container">  
             <div class="sidebar">  
@@ -123,7 +123,7 @@
             </div>  
             <div class="main-content">  
                 <div class="form-container">  
-                    <asp:Label ID="lblThongBao" runat="server" Text="" Visible="false"></asp:Label>  
+                    <asp:Label ID="lblThongBao" runat="server" ></asp:Label>  
                     <asp:HiddenField ID="hdnIdSanPham" runat="server" Value="" />  
 
                     <label for="name">Tên Sản Phẩm:</label>  
@@ -141,8 +141,9 @@
                     <br />  
 
                     <label for="specifications">Cấu Hình:</label>  
-                    <asp:TextBox ID="txtCauHinh" runat="server" TextMode="SingleLine"></asp:TextBox>  
-                    <br />  
+                    <FCKeditorV2:FCKeditor ID="FCKCauHinh" runat="server" BasePath="~/fckeditor/" Height="400px" Width="800px">
+
+                    </FCKeditorV2:FCKeditor>
 
                     <label for="details">Mô Tả:</label>  
                     <asp:TextBox ID="txtMoTa" runat="server" TextMode="SingleLine"></asp:TextBox>  

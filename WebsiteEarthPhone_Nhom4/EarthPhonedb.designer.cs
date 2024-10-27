@@ -36,6 +36,9 @@ namespace WebsiteEarthPhone_Nhom4
     partial void InsertDatHang(DatHang instance);
     partial void UpdateDatHang(DatHang instance);
     partial void DeleteDatHang(DatHang instance);
+    partial void InsertMauSanPham(MauSanPham instance);
+    partial void UpdateMauSanPham(MauSanPham instance);
+    partial void DeleteMauSanPham(MauSanPham instance);
     partial void InsertSanPham(SanPham instance);
     partial void UpdateSanPham(SanPham instance);
     partial void DeleteSanPham(SanPham instance);
@@ -45,6 +48,9 @@ namespace WebsiteEarthPhone_Nhom4
     partial void InsertTinTuc(TinTuc instance);
     partial void UpdateTinTuc(TinTuc instance);
     partial void DeleteTinTuc(TinTuc instance);
+    partial void InsertCauHinhDN(CauHinhDN instance);
+    partial void UpdateCauHinhDN(CauHinhDN instance);
+    partial void DeleteCauHinhDN(CauHinhDN instance);
     #endregion
 		
 		public EarthPhonedbDataContext() : 
@@ -122,6 +128,14 @@ namespace WebsiteEarthPhone_Nhom4
 			get
 			{
 				return this.GetTable<TinTuc>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CauHinhDN> CauHinhDNs
+		{
+			get
+			{
+				return this.GetTable<CauHinhDN>();
 			}
 		}
 	}
@@ -632,8 +646,10 @@ namespace WebsiteEarthPhone_Nhom4
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MauSanPham")]
-	public partial class MauSanPham
+	public partial class MauSanPham : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _ID_MAUSP;
 		
@@ -643,11 +659,29 @@ namespace WebsiteEarthPhone_Nhom4
 		
 		private string _TenMau;
 		
+		private EntityRef<SanPham> _SanPham;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnID_MAUSPChanging(int value);
+    partial void OnID_MAUSPChanged();
+    partial void OnDUONGDANANHChanging(string value);
+    partial void OnDUONGDANANHChanged();
+    partial void OnID_SANPHAMChanging(System.Nullable<long> value);
+    partial void OnID_SANPHAMChanged();
+    partial void OnTenMauChanging(string value);
+    partial void OnTenMauChanged();
+    #endregion
+		
 		public MauSanPham()
 		{
+			this._SanPham = default(EntityRef<SanPham>);
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_MAUSP", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_MAUSP", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID_MAUSP
 		{
 			get
@@ -658,7 +692,11 @@ namespace WebsiteEarthPhone_Nhom4
 			{
 				if ((this._ID_MAUSP != value))
 				{
+					this.OnID_MAUSPChanging(value);
+					this.SendPropertyChanging();
 					this._ID_MAUSP = value;
+					this.SendPropertyChanged("ID_MAUSP");
+					this.OnID_MAUSPChanged();
 				}
 			}
 		}
@@ -674,7 +712,11 @@ namespace WebsiteEarthPhone_Nhom4
 			{
 				if ((this._DUONGDANANH != value))
 				{
+					this.OnDUONGDANANHChanging(value);
+					this.SendPropertyChanging();
 					this._DUONGDANANH = value;
+					this.SendPropertyChanged("DUONGDANANH");
+					this.OnDUONGDANANHChanged();
 				}
 			}
 		}
@@ -690,7 +732,15 @@ namespace WebsiteEarthPhone_Nhom4
 			{
 				if ((this._ID_SANPHAM != value))
 				{
+					if (this._SanPham.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_SANPHAMChanging(value);
+					this.SendPropertyChanging();
 					this._ID_SANPHAM = value;
+					this.SendPropertyChanged("ID_SANPHAM");
+					this.OnID_SANPHAMChanged();
 				}
 			}
 		}
@@ -706,8 +756,66 @@ namespace WebsiteEarthPhone_Nhom4
 			{
 				if ((this._TenMau != value))
 				{
+					this.OnTenMauChanging(value);
+					this.SendPropertyChanging();
 					this._TenMau = value;
+					this.SendPropertyChanged("TenMau");
+					this.OnTenMauChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SanPham_MauSanPham", Storage="_SanPham", ThisKey="ID_SANPHAM", OtherKey="ID_SANPHAM", IsForeignKey=true)]
+		public SanPham SanPham
+		{
+			get
+			{
+				return this._SanPham.Entity;
+			}
+			set
+			{
+				SanPham previousValue = this._SanPham.Entity;
+				if (((previousValue != value) 
+							|| (this._SanPham.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._SanPham.Entity = null;
+						previousValue.MauSanPhams.Remove(this);
+					}
+					this._SanPham.Entity = value;
+					if ((value != null))
+					{
+						value.MauSanPhams.Add(this);
+						this._ID_SANPHAM = value.ID_SANPHAM;
+					}
+					else
+					{
+						this._ID_SANPHAM = default(Nullable<long>);
+					}
+					this.SendPropertyChanged("SanPham");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -743,6 +851,8 @@ namespace WebsiteEarthPhone_Nhom4
 		private System.Nullable<int> _SanPhamMoi;
 		
 		private EntitySet<DatHang> _DatHangs;
+		
+		private EntitySet<MauSanPham> _MauSanPhams;
 		
 		private EntityRef<DanhMuc1> _DanhMuc1;
 		
@@ -781,6 +891,7 @@ namespace WebsiteEarthPhone_Nhom4
 		public SanPham()
 		{
 			this._DatHangs = new EntitySet<DatHang>(new Action<DatHang>(this.attach_DatHangs), new Action<DatHang>(this.detach_DatHangs));
+			this._MauSanPhams = new EntitySet<MauSanPham>(new Action<MauSanPham>(this.attach_MauSanPhams), new Action<MauSanPham>(this.detach_MauSanPhams));
 			this._DanhMuc1 = default(EntityRef<DanhMuc1>);
 			this._ThuongHieu = default(EntityRef<ThuongHieu>);
 			OnCreated();
@@ -1047,6 +1158,19 @@ namespace WebsiteEarthPhone_Nhom4
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SanPham_MauSanPham", Storage="_MauSanPhams", ThisKey="ID_SANPHAM", OtherKey="ID_SANPHAM")]
+		public EntitySet<MauSanPham> MauSanPhams
+		{
+			get
+			{
+				return this._MauSanPhams;
+			}
+			set
+			{
+				this._MauSanPhams.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DanhMuc1_SanPham", Storage="_DanhMuc1", ThisKey="ID_DANHMUC", OtherKey="ID_DANHMUC", IsForeignKey=true)]
 		public DanhMuc1 DanhMuc1
 		{
@@ -1142,6 +1266,18 @@ namespace WebsiteEarthPhone_Nhom4
 		}
 		
 		private void detach_DatHangs(DatHang entity)
+		{
+			this.SendPropertyChanging();
+			entity.SanPham = null;
+		}
+		
+		private void attach_MauSanPhams(MauSanPham entity)
+		{
+			this.SendPropertyChanging();
+			entity.SanPham = this;
+		}
+		
+		private void detach_MauSanPhams(MauSanPham entity)
 		{
 			this.SendPropertyChanging();
 			entity.SanPham = null;
@@ -1371,6 +1507,116 @@ namespace WebsiteEarthPhone_Nhom4
 					this._DUONGDAN_ANH = value;
 					this.SendPropertyChanged("DUONGDAN_ANH");
 					this.OnDUONGDAN_ANHChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CauHinhDN")]
+	public partial class CauHinhDN : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _ID_CAUHINH;
+		
+		private string _TenBien;
+		
+		private string _GiaTri;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnID_CAUHINHChanging(long value);
+    partial void OnID_CAUHINHChanged();
+    partial void OnTenBienChanging(string value);
+    partial void OnTenBienChanged();
+    partial void OnGiaTriChanging(string value);
+    partial void OnGiaTriChanged();
+    #endregion
+		
+		public CauHinhDN()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_CAUHINH", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long ID_CAUHINH
+		{
+			get
+			{
+				return this._ID_CAUHINH;
+			}
+			set
+			{
+				if ((this._ID_CAUHINH != value))
+				{
+					this.OnID_CAUHINHChanging(value);
+					this.SendPropertyChanging();
+					this._ID_CAUHINH = value;
+					this.SendPropertyChanged("ID_CAUHINH");
+					this.OnID_CAUHINHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenBien", DbType="NVarChar(MAX)")]
+		public string TenBien
+		{
+			get
+			{
+				return this._TenBien;
+			}
+			set
+			{
+				if ((this._TenBien != value))
+				{
+					this.OnTenBienChanging(value);
+					this.SendPropertyChanging();
+					this._TenBien = value;
+					this.SendPropertyChanged("TenBien");
+					this.OnTenBienChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaTri", DbType="NVarChar(MAX)")]
+		public string GiaTri
+		{
+			get
+			{
+				return this._GiaTri;
+			}
+			set
+			{
+				if ((this._GiaTri != value))
+				{
+					this.OnGiaTriChanging(value);
+					this.SendPropertyChanging();
+					this._GiaTri = value;
+					this.SendPropertyChanged("GiaTri");
+					this.OnGiaTriChanged();
 				}
 			}
 		}

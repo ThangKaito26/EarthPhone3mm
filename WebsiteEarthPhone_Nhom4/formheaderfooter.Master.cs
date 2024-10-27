@@ -26,5 +26,11 @@ namespace WebsiteEarthPhone_Nhom4
                 listDM = data.ToList();
             }
         }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("HomeTK.aspx?GiaTriTim=" + txtTimKiem.Text);
+            //Response.Redirect("Homefound.aspx?GiaTriTim=" + txtTimKiem);
+        }
     }
 }

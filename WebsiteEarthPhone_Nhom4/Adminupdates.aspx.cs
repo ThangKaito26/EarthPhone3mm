@@ -17,7 +17,38 @@ namespace WebsiteEarthPhone_Nhom4
         {
             if (!IsPostBack)
                 LoadData();
+                //KiemTraDN();
         }
+        /*
+        void KiemTraDN()
+        {
+
+
+            if (Session["username"] != "" && Session["password"] != "") //kiểm tra user và mk có tồn tại ko
+            {
+                //xét username xem khớp vs csdl ko
+                var data = from q in db.CauHinhDNs
+                           where q.TenBien == "UserAdmin" && q.GiaTri == Session["username"]
+                           select q;
+                if (data != null && data.Count() > 0) // nếu nó khớp
+                {
+                    //kiểm tra mk khớp ko
+                    var datax = from x in db.CauHinhDNs
+                                where x.TenBien == "Password" && x.GiaTri == Session["password"]
+                                select x;
+                    if (datax == null && datax.Count() == 0) //sai mk
+                    {
+                        Response.Redirect("AdminLogin.aspx");
+                    }
+                }
+                else //sai username 
+                {
+                    Response.Redirect("AdminLogin.aspx");
+                }
+            }
+
+        }
+         */
         // Phương thức để tải dữ liệu sản phẩm  
         void LoadData()
         {
@@ -39,9 +70,10 @@ namespace WebsiteEarthPhone_Nhom4
                         // Gán giá trị cho các trường điều khiển  
                         txtTenSP.Text = ifDienThoai.TEN_SANPHAM;
                         txtGia.Text = ifDienThoai.GIA;
-                        txtCauHinh.Text = ifDienThoai.CAUHINH;
                         txtMoTa.Text = ifDienThoai.MOTASANPHAM;
                         FCKChiTiet.Value = HttpUtility.HtmlDecode(ifDienThoai.ChiTietSanPham);
+                        FCKCauHinh.Value = HttpUtility.HtmlDecode(ifDienThoai.CAUHINH);
+
                     }
                 }
             }
@@ -66,24 +98,18 @@ namespace WebsiteEarthPhone_Nhom4
                 // Cập nhật các thuộc tính của sản phẩm  
                 ifcapnhat.TEN_SANPHAM = txtTenSP.Text;
                 ifcapnhat.GIA = txtGia.Text;
-                ifcapnhat.CAUHINH = txtCauHinh.Text;
                 ifcapnhat.MOTASANPHAM = txtMoTa.Text;
 
                 // Kiểm tra nếu có file hình ảnh được tải lên  
                 if (fileHinhAnh.HasFile)
-                {
-                    string fileName = Path.GetFileName(fileHinhAnh.FileName);
-                    string filePath = Server.MapPath("~/images/" + fileName); // Lưu ảnh vào thư mục 'images'  
-
+                {  
                     // Lưu ảnh  
-                    fileHinhAnh.SaveAs(filePath);
-
-                    // Cập nhật đường dẫn hình ảnh  
-                    ifcapnhat.ANH = "~/images/" + fileName;
+                    ifcapnhat.ANH = fileHinhAnh.FileName;
+                    fileHinhAnh.SaveAs(Server.MapPath("img\\products\\") + fileHinhAnh.FileName);
                 }
-
                 // Cập nhật chi tiết sản phẩm  
                 ifcapnhat.ChiTietSanPham = HttpUtility.HtmlEncode(FCKChiTiet.Value);
+                ifcapnhat.CAUHINH= HttpUtility.HtmlEncode(FCKCauHinh.Value);
 
                 db.SubmitChanges();  // Lưu thay đổi vào cơ sở dữ liệu  
                 lblThongBao.Text = "Sản phẩm " + ifDienThoai.TEN_SANPHAM + " đã được cập nhật !";
