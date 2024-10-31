@@ -53,8 +53,6 @@ namespace WebsiteEarthPhone_Nhom4
             ifdathang.SoDT = Convert.ToInt64(txtSDT.Text); // Assuming SoDT is bigint in your database
 
 
-            Label lblTenDT = (Label)this.FindControl("lblTenDT");
-
             db.DatHangs.InsertOnSubmit(ifdathang);
             db.SubmitChanges();
 

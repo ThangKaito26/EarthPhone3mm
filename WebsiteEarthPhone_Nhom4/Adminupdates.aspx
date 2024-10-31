@@ -117,9 +117,15 @@
            <a href="AdminProduct.aspx"> <img alt="Earth Phone Store Logo" src="img/logo/STORE.png" width="200" /> </a>
         </div>  
         <div class="container">  
-            <div class="sidebar">  
-                <h2>LIST OF PRODUCTS</h2>  
-                <h2>LIST CATEGORY</h2>  
+            <div class="sidebar">
+                <a style="text-decoration: none" href="AdminProduct.aspx">
+                    <h2>LIST OF PRODUCTS
+                    </h2>
+                </a>
+                <a style="text-decoration: none" href="AdminCatetory.aspx">
+                    <h2>LIST CATEGORY
+                    </h2>
+                </a>
             </div>  
             <div class="main-content">  
                 <div class="form-container">  

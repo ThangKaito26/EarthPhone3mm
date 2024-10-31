@@ -61,9 +61,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminCatetory.aspx" />
     <Content Include="AdminLogin.aspx" />
     <Content Include="AdminProduct.aspx" />
     <Content Include="Adminupdates.aspx" />
+    <Content Include="Adminupdatescate.aspx" />
     <Content Include="css\pay.css" />
     <Content Include="css\product.css" />
     <Content Include="css\home.css" />
@@ -79,6 +81,13 @@
     <Content Include="pay.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminCatetory.aspx.cs">
+      <DependentUpon>AdminCatetory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCatetory.aspx.designer.cs">
+      <DependentUpon>AdminCatetory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminLogin.aspx.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -99,6 +108,13 @@
     </Compile>
     <Compile Include="Adminupdates.aspx.designer.cs">
       <DependentUpon>Adminupdates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Adminupdatescate.aspx.cs">
+      <DependentUpon>Adminupdatescate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Adminupdatescate.aspx.designer.cs">
+      <DependentUpon>Adminupdatescate.aspx</DependentUpon>
     </Compile>
     <Compile Include="EarthPhonedb.cs">
       <DependentUpon>EarthPhonedb.dbml</DependentUpon>

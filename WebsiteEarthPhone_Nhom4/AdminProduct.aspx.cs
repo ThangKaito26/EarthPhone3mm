@@ -14,9 +14,9 @@ namespace WebsiteEarthPhone_Nhom4
         {
             if (!IsPostBack)
                 LoadData();
-               // KiemTraDN();
+                KiemTraDN();
         }
-        /*
+        
         void KiemTraDN()
         {
 
@@ -45,7 +45,7 @@ namespace WebsiteEarthPhone_Nhom4
             }
 
         }
-        */
+        
         void LoadData()
         {
             var data = from q in db.SanPhams

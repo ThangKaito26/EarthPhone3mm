@@ -87,7 +87,7 @@
         </div>
     </section>
   
-    <section class="promotion-section bg-purple-200">
+    <section id="IPHONE"class="promotion-section bg-purple-200">
         <h2>iPhone</h2>
         <div class="product-grid">
             <% for (int i = 1; i < listIPHONE.Count; i++)
@@ -145,7 +145,7 @@
                { %>
             <a href='<%="products.aspx?IdSanPham="+ listRM[i].ID_SANPHAM.ToString() %>' style="text-decoration: none">
                 <div class="product-item">
-                    <img alt="<%= listRM[i].TEN_SANPHAM %>" src="<%="./img/products/realmi/" + listRM[i].ANH %>"
+                    <img alt="<%= listRM[i].TEN_SANPHAM %>" src="<%="./img/products/realme/" + listRM[i].ANH %>"
                         width="200" height="300" />
                     <h3><%= listRM[i].TEN_SANPHAM %></h3>
                     <p class="price"><%= listRM[i].GIA %></p>
@@ -172,7 +172,7 @@
         </div>
     </section>
 
-    <section iclass="promotion-section bg-purple-200">
+    <section id="XIAOMI" class="promotion-section bg-purple-200">
         <h2>Xiaomi</h2>
         <div class="product-grid">
             <% for (int i = 1; i < listXM.Count; i++)
@@ -196,7 +196,7 @@
                { %>
             <a href='<%="products.aspx?IdSanPham="+ listSPKH[i].ID_SANPHAM.ToString() %>' style="text-decoration: none">
                 <div class="product-item">
-                    <img alt="<%= listSPKH[i].TEN_SANPHAM %>" src="<%="./img/products/spkhac" + listSPKH[i].ANH %>"
+                    <img alt="<%= listSPKH[i].TEN_SANPHAM %>" src="<%="./img/products/spkhac/" + listSPKH[i].ANH %>"
                         width="200" height="300" />
                     <h3><%= listSPKH[i].TEN_SANPHAM %></h3>
                     <p class="price"><%= listSPKH[i].GIA %></p>
@@ -205,3 +205,8 @@
             <% } %>
         </div>
     </section>
+
+    <!-- Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>

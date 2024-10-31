@@ -28,7 +28,7 @@
                 vertical-align: middle;
             }
 
-        .sidebar {
+        .sidebar {<a href="AdminProduct.aspx">AdminProduct.aspx</a>
             width: 180px;
             background-color: #F0F0F0;
             padding: 20px;
@@ -119,10 +119,11 @@
         .sty {
             background-color: #4CAF50; /* Button color */
             color: white; /* Button text color */
-            padding: 10px 20px;
+            padding: 10px ;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            text-decoration:none;
         }
 
             .sty:hover {
@@ -133,11 +134,13 @@
 <body>
     <form id="form1" runat="server">
         <div class="header">
-            <img alt="Earth Phone Store Logo" src="img/logo/STORE.png" width="200" />
+            <a href="Home.aspx"><img alt="Earth Phone Store Logo" src="img/logo/STORE.png" width="200" /></a>
         </div>
         <div class="sidebar" style="background-color: white;">
-            <h2>LIST OF PRODUCTS</h2>
-            <h2>LIST CATEGORY</h2>
+            <a style="text-decoration:none" href="AdminProduct.aspx"><h2>LIST OF PRODUCTS
+            </h2></a>
+            <a style="text-decoration:none" href="AdminCatetory.aspx"><h2>LIST CATEGORY
+            </h2></a>
         </div>
         <div class="content" style="background-color: #F8F8F8; margin-left: 230px;">
             <h2>ALL PRODUCTS</h2>
@@ -157,17 +160,17 @@
                         </asp:TemplateColumn>
                         <asp:TemplateColumn HeaderText="Photo">
                             <ItemTemplate>
-                                <img src='<%#Eval("ANH") %>' width="100" height="100" alt="hinhanh" />
+                                <img src='<%#"./img/products/" + Eval("ANH") %>' width="100" height="100" alt="hinhanh" />
                             </ItemTemplate>
                         </asp:TemplateColumn>
                         <asp:TemplateColumn HeaderText="Action">
                             <ItemTemplate>
-                                <asp:LinkButton ID="linkDelete" CssClass="sty" runat="server" Text="Xoá" Width="100"
+                                <asp:LinkButton ID="linkDelete" CssClass="sty" runat="server" Text="Xoá" Width="50"
                                     CommandName="GetDelete"
                                     OnClientClick="return confirm('Bạn Muốn Xóa Sản Phẩm Này Đúng Không ?')"></asp:LinkButton>
-                                <asp:LinkButton ID="linkUpdata" runat="server" Text="Cập Nhật" Width="100"
+                                <asp:LinkButton ID="linkUpdata" CssClass="sty" runat="server" Text="Cập Nhật" Width="70"
                                     CommandName="GetUpdate"
-                                    >
+                                    OnClientClick="return confirm('Bạn Muốn Cập Nhật Sản Phẩm Này Đúng Không ?')">
                                 </asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateColumn>

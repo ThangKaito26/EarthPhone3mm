@@ -54,7 +54,7 @@
                         </div>
                         <div class="order-tracking">
                             <i class="fas fa-truck"></i>
-                            <span>Tra cứu đơn hàng</span>
+                            <a style="text-decoration:none; color: white" href="AdminLogin.aspx"><span>Trang Admin</span></a>
                         </div>
                     </div>
                 </div>

@@ -17,9 +17,9 @@ namespace WebsiteEarthPhone_Nhom4
         {
             if (!IsPostBack)
                 LoadData();
-                //KiemTraDN();
+                KiemTraDN();
         }
-        /*
+        
         void KiemTraDN()
         {
 
@@ -48,7 +48,7 @@ namespace WebsiteEarthPhone_Nhom4
             }
 
         }
-         */
+         
         // Phương thức để tải dữ liệu sản phẩm  
         void LoadData()
         {

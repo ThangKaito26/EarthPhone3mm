@@ -35,13 +35,13 @@
                     <% } %>
                     <div class="product-thumbnails">
                         <button class="thumbnail-button" onclick="changeImage('<%= ifDienThoai.ANH %>')">
-                            <img src='<%= ifDienThoai.ANH %>' alt="Hình sản phẩm chính"
+                            <img src='<%="./img/products/" + ifDienThoai.ANH %>' alt="Hình sản phẩm chính"
                                 data-image-src='<%= ifDienThoai.ANH %>'>
                         </button>
                         <% for (int i = 0; i < Colors.Count; i++)
                            { %>
                         <button class="thumbnail-button" onclick="changeImage('<%= Colors[i].DUONGDANANH %>')">
-                            <img src='<%= Colors[i].DUONGDANANH %>' alt='<%= Colors[i].TenMau %>'
+                            <img style="height: 40px;" src='<%= Colors[i].DUONGDANANH %>' alt='<%= Colors[i].TenMau %>'
                                 data-image-src='<%= Colors[i].DUONGDANANH %>'>
                         </button>
                         <% } %>

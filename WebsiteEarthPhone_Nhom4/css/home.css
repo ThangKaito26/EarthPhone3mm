@@ -449,7 +449,7 @@ body {
     box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
     cursor: pointer;
     transition-duration: 0.3s;
-    overflow: hidden;
+    overflow:scroll;
     margin-left: -100px;
     margin-top: -70px;
 
